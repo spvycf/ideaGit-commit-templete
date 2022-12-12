@@ -1,0 +1,38 @@
+<idea-plugin>
+  <id>commit-template-idea-plugin</id>
+  <name>Git Commit Template</name>
+  <version>1.2.1</version>
+
+
+  <description><![CDATA[
+    <p>git提交模板化:</p>
+    <pre>
+        [branchName]
+        &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+        &lt;BLANK LINE&gt;
+        &lt;body&gt;
+        &lt;BLANK LINE&gt;
+        &lt;footer&gt;
+        </pre>
+    ]]></description>
+  <vendor></vendor>
+
+  <idea-version since-build="145.0"/>
+
+  <depends>com.intellij.modules.vcs</depends>
+  <depends>Git4Idea</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="Commit.Button" class="commit.CreateCommitAction"
+            text="Create commit message"
+            description="Create commit message"
+            icon="/icons/load.png">
+      <add-to-group group-id="Vcs.MessageActionGroup" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
